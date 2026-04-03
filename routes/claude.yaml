@@ -23,5 +23,11 @@ spec:
     - PUT
     - DELETE
   healthPath: "/health"
+  notes: "Deployed to fleet Test"
+  functionCode: |
+      module.exports = async (req, res) => {
+        res.send('Hello from Claude!')
+      }
+  functionLanguage: javascript
 status:
   phase: Pending
