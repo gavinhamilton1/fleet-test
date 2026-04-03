@@ -10,7 +10,7 @@ spec:
   name: "Test"
   subdomain: "test.jpm.com"
   gatewayType: envoy
-  replicas: 4
+  replicas: 2
   nodes:
     - name: "8b5f4006-cbc3-492d-ba4a-1d22d2df990f-envoy-1"
       index: 1
@@ -23,16 +23,4 @@ spec:
       gatewayType: "envoy"
       datacenter: "eu-west-1"
       region: "eu-west-1"
-      status: "running"
-    - name: "8b5f4006-cbc3-492d-ba4a-1d22d2df990f-envoy-3"
-      index: 3
-      gatewayType: "envoy"
-      datacenter: "ap-southeast-1"
-      region: "ap-southeast-1"
-      status: "running"
-    - name: "8b5f4006-cbc3-492d-ba4a-1d22d2df990f-envoy-4"
-      index: 4
-      gatewayType: "envoy"
-      datacenter: "us-east-1"
-      region: "us-east-1"
       status: "running"
