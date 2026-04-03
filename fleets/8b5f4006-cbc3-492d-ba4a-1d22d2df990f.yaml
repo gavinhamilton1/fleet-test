@@ -1,0 +1,26 @@
+apiVersion: ingress.jpmc.com/v1alpha1
+kind: Fleet
+metadata:
+  name: fleet-test
+  namespace: ingress-dp
+  labels:
+    app.kubernetes.io/managed-by: management-api
+    fleet.jpmc.com/id: "8b5f4006-cbc3-492d-ba4a-1d22d2df990f"
+spec:
+  name: "Test"
+  subdomain: "test.jpm.com"
+  gatewayType: envoy
+  replicas: 2
+  nodes:
+    - name: "8b5f4006-cbc3-492d-ba4a-1d22d2df990f-envoy-1"
+      index: 1
+      gatewayType: "envoy"
+      datacenter: "us-east-2"
+      region: "us-east-2"
+      status: "running"
+    - name: "8b5f4006-cbc3-492d-ba4a-1d22d2df990f-envoy-2"
+      index: 2
+      gatewayType: "envoy"
+      datacenter: "eu-west-1"
+      region: "eu-west-1"
+      status: "running"
