@@ -14,7 +14,7 @@ spec:
   audience: ""
   team: "Markets"
   authnMechanism: "bearer"
-  authIssuer: ""
+  authIssuer: "Sentry"
   tlsRequired: true
   targetFleet: "test.jpm.com"
   methods:
@@ -23,5 +23,16 @@ spec:
     - PUT
     - DELETE
   healthPath: "/health"
+  notes: "Deployed to fleet Test"
+  functionCode: |
+      module.exports = async (req, res) => {
+        res.json({
+          message: 'Hello from Claude!',
+          path: req.path,
+          method: req.method,
+          timestamp: new Date().toISOString(),
+        })
+      }
+  functionLanguage: javascript
 status:
   phase: Pending
