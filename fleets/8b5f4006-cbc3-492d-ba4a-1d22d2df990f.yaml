@@ -21,6 +21,6 @@ spec:
     - name: "8b5f4006-cbc3-492d-ba4a-1d22d2df990f-envoy-2"
       index: 2
       gatewayType: "envoy"
-      datacenter: "eu-west-1"
-      region: "eu-west-1"
+      datacenter: "us-east-2"
+      region: "us-east-2"
       status: "running"
