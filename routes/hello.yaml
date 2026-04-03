@@ -27,7 +27,7 @@ spec:
   functionCode: |
       module.exports = async (req, res) => {
         res.json({
-          message: 'Hello from new test fleet!',
+          message: 'Hello from GitOps route change!',
           path: req.path,
           method: req.method,
           timestamp: new Date().toISOString(),
