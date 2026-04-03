@@ -1,0 +1,27 @@
+apiVersion: ingress.jpmc.com/v1alpha1
+kind: Route
+metadata:
+  name: 836ed32a-09e3-4cc5-bda1-ebc19246d482
+  namespace: ingress-dp
+  labels:
+    app.kubernetes.io/managed-by: management-api
+    ingress.jpmc.com/gateway: envoy
+spec:
+  path: "/claude"
+  hostname: "test.jpm.com"
+  backendUrl: "http://lambda-claude:8080"
+  gatewayType: envoy
+  audience: ""
+  team: "Markets"
+  authnMechanism: "bearer"
+  authIssuer: ""
+  tlsRequired: true
+  targetFleet: "test.jpm.com"
+  methods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+  healthPath: "/health"
+status:
+  phase: Pending
