@@ -1,0 +1,38 @@
+apiVersion: ingress.jpmc.com/v1alpha1
+kind: Route
+metadata:
+  name: 0865a4e3-73a2-4d54-975f-d29d5410ed75
+  namespace: ingress-dp
+  labels:
+    app.kubernetes.io/managed-by: management-api
+    ingress.jpmc.com/gateway: envoy
+spec:
+  path: "/hello"
+  hostname: "test.jpm.com"
+  backendUrl: "http://lambda-0865a4e3-hello:8080"
+  gatewayType: envoy
+  audience: ""
+  team: "Markets"
+  authnMechanism: "bearer"
+  authIssuer: "Sentry"
+  tlsRequired: true
+  targetFleet: "test.jpm.com"
+  methods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+  healthPath: "/health"
+  notes: "Deployed to fleet Test"
+  functionCode: |
+      module.exports = async (req, res) => {
+        res.json({
+          message: 'Hello from new test fleet!',
+          path: req.path,
+          method: req.method,
+          timestamp: new Date().toISOString(),
+        })
+      }
+  functionLanguage: javascript
+status:
+  phase: Pending
